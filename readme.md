@@ -1,7 +1,7 @@
 ## Parking System 
--User Authentication 
--Slot Reservation and Release 
--Special Slot for Faculty 
+- User Authentication 
+- Slot Reservation and Release 
+- Special Slot for Faculty 
 
 
 ## License
