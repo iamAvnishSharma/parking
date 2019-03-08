@@ -12,7 +12,7 @@
                         <p>Type: {{$slot->type}} Wheeler</p><br>
                         <p>Address: {{$slot->address}}</p><br>
                         <p>Special Slot: {{$slot->special}}</p><br>
-                    <a href="/slot/{{$slot->id}}/release">Release {{$slot->id}}</a>
+                    <a href="./slot/{{$slot->id}}/release">Release {{$slot->id}}</a>
                 </div>
             </div>
         @endforeach

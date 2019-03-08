@@ -15,7 +15,7 @@
          
         @endphp
             <div class="card  w-25">
-            <div class="card-body"><a href="/slots"> OPEN : {{$count}}</a></div>
+            <div class="card-body"><a href="./slots"> OPEN : {{$count}}</a></div>
             </div>
             <div class="card  w-25">
             <div class="card-body">BOOKED : {{$booked}}</div>

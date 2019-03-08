@@ -10,7 +10,7 @@
             Create a New slot 
         </div>
         <div class="card-body">
-            <form action="slot/store/new" method="POST">
+            <form action="./slot/store/new" method="POST">
                 @csrf
                 <label for="">Type</label>                
                 <select name="type" id="type">

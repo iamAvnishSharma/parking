@@ -9,7 +9,7 @@
         @foreach ($slots as $slot)
             <div class="card" style="width:100px">
                 <div class="card-body">
-                    <a href="/slot/{{$slot->id}}">Slot number {{$slot->id}}</a>
+                    <a href="./slot/{{$slot->id}}">Slot number {{$slot->id}}</a>
                 </div>
             </div>
         @endforeach
