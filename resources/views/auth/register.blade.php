@@ -29,9 +29,10 @@
                                 <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Type') }}</label>
     
                                 <div class="col-md-6">
-                                    <select id="type" type="text" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}" type="type" value="{{ old('type') }}" required autofocus>
+                                    <select id="type" name="type" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}" type="type" value="{{ old('type') }}" required autofocus>
                                         <option value="student">Student</option>
-                                        <option value="teacher">Teacher</option>
+                                        <option value="faculty">Faculty</option>
+                                        <option value="handicap">Handicap</option>
                                     </select>
                                     @if ($errors->has('type'))
                                         <span class="invalid-feedback" role="alert">

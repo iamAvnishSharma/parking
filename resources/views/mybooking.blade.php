@@ -7,9 +7,12 @@
     </div>
     <div class="card-columns">
         @foreach ($slots as $slot)
-            <div class="card" style="width:100px">
+            <div class="card" style="width:200px">
                 <div class="card-body">
-                    <a href="/slot/{{$slot->id}}">Slot number {{$slot->id}}</a>
+                        <p>Type: {{$slot->type}} Wheeler</p><br>
+                        <p>Address: {{$slot->address}}</p><br>
+                        <p>Special Slot: {{$slot->special}}</p><br>
+                    <a href="/slot/{{$slot->id}}/release">Release {{$slot->id}}</a>
                 </div>
             </div>
         @endforeach

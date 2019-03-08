@@ -26,14 +26,15 @@ class LoginController extends Controller
      * @var string
      */
 
-    protected function authenticated(Request $request,$user)
-    {
-        if( $user->id==1)
-        {
-            return redirect()->route('admin');
+    public function authenticated($request , $user){
+        if($user->id=='1'){
+            return redirect()->route('admin') ;
+        }else{
+            return redirect()->route('/') ;
         }
     }
-    protected $redirectTo = '/home';
+   
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.

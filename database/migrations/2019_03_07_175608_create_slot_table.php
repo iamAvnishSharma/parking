@@ -13,10 +13,13 @@ class CreateSlotTable extends Migration
      */
     public function up()
     {
-        Schema::create('slot', function (Blueprint $table) {
+        Schema::create('slots', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->binary('occupied')->default('0');
-            $table->string('special');
+            $table->string('occupied')->default('no');
+            $table->string('occupiedby')->default('none');
+            $table->string('special')->default('all');
+            $table->string('type');
+            $table->string('address');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateSlotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('slot');
+        Schema::dropIfExists('slots');
     }
 }

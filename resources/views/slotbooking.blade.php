@@ -8,19 +8,27 @@
 
             <div class="card">
                 <div class="card-header">
-                    SLOT NUMBER {{$n+1}}
+                    SLOT NUMBER {{$slot->id}}
                 </div>
                 <div class="card-body">
+                    
+                    <p>Type: {{$slot->type}} Wheeler</p><br>
+                    <p>Address: {{$slot->address}}</p><br>
+                    <p>Slot Prefrence: {{$slot->special}}</p><br>
                     @guest
-                        Login to Book This Slot 
+                    <h1>    Login to Book This Slot </h1>
                     @else
-                        <a href="/slot/{{$n}}/book" class="btn">Book</a>
+                        @if($slot->special=='all')
+                            <a href="/slot/{{$slot->id}}/book" class="btn">Book</a>
+                        @elseif($slot->special==Auth::user()->type)
+                            <a href="/slot/{{$slot->id}}/book" class="btn">Book</a>
+                        @else   
+                             <h1>Reserved</h1>
+                        @endif
                     @endguest
                 </div>
             </div>
 
-
-    
 
 </div>
 @endsection

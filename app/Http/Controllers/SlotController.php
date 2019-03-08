@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Slot;
 use Illuminate\Http\Request;
+use DB;
+use Auth;
 
 class SlotController extends Controller
 {
@@ -14,7 +16,8 @@ class SlotController extends Controller
      */
     public function index()
     {
-        return view('slots');
+        $slots = DB::table('slots')->where('occupied','no')->get();
+        return view('slots')->with('slots',$slots);
     }
 
     /**
@@ -35,7 +38,12 @@ class SlotController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $slot = new Slot;
+        $slot->type = $request->type;
+        $slot->address = $request->address;
+        $slot->special = $request->special;
+        $slot->save();
+        return back();
     }
 
     /**
@@ -55,9 +63,14 @@ class SlotController extends Controller
      * @param  \App\Slot  $slot
      * @return \Illuminate\Http\Response
      */
-    public function edit(Slot $slot)
+    public function edit(Request $id)
     {
-        //
+        $u = Auth::id();
+        $slot = Slot::find($id);
+        $slot->occupied = 'yes';
+        $slot->occupiedby = $u;
+        $slot->save();
+        return('/');
     }
 
     /**
@@ -69,7 +82,7 @@ class SlotController extends Controller
      */
     public function update(Request $request, Slot $slot)
     {
-        //
+        
     }
 
     /**
