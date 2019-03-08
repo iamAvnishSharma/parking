@@ -19,9 +19,9 @@
                     <h1>    Login to Book This Slot </h1>
                     @else
                         @if($slot->special=='all')
-                            <a href="./slot/{{$slot->id}}/book" class="btn">Book</a>
+                            <a href="./{{$slot->id}}/book" class="btn">Book</a>
                         @elseif($slot->special==Auth::user()->type)
-                            <a href="./slot/{{$slot->id}}/book" class="btn">Book</a>
+                            <a href="./{{$slot->id}}/book" class="btn">Book</a>
                         @else   
                              <h1>Reserved</h1>
                         @endif
